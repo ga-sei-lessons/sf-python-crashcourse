@@ -107,6 +107,17 @@ def greet(name):
 
 # exclaim()
 
+# example of using a doc string
+def my_well_documented_function():
+  '''
+    this is a well documented funciton, it uses a doc string, prints hello\n
+    my_well_documented_function(None):\n
+      returns None
+  '''
+  print('hello')
+
+my_well_documented_function()
+
 # ## # ## # ## # ## #
 # Math
 
@@ -170,4 +181,34 @@ if 'eggs' in my_list:
   my_list.remove('eggs')
 if 'eggs' in my_list: 
   my_list.remove('eggs')
-print(my_list)
+# print(my_list.reverse())
+
+# ## # ## # ## # ## 
+# string and list slicing
+
+# this works on strings and lists
+my_nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# list/str[start index:end index:steps]
+
+# make copy of of the list
+print(my_nums[::])
+
+# remove first thing in the list
+print(my_nums[1::])
+
+print(my_nums[1:3]) # omit colon for default step by 1
+
+# every other item in the list
+print(my_nums[::2]) # start @ default, end @ default, count by 2
+
+# slice off the last
+print(my_nums[len(my_nums) - 1::])
+
+# reverse with a step of -1
+print(my_nums[::-1])
+
+# wrap the end -- all but the last
+print(my_nums[:-1:])
+
+my_str = '0123456789'
+print(my_str[:-1])
