@@ -168,47 +168,135 @@ print(len(my_list))
 # access values with numbers counting from 0 -- out of bounds is an error
 # print(my_list[3])
 
-print(dir(list))
-# this is push
-my_list.append('spam')
-# this is unshift
-# list.insert(index, item)
-my_list.insert(0, 'spam')
-# remove the last spam
-my_list.pop()
-# remove finds a value and takes it ouw
-if 'eggs' in my_list: 
-  my_list.remove('eggs')
-if 'eggs' in my_list: 
-  my_list.remove('eggs')
-# print(my_list.reverse())
+# print(dir(list))
+# # this is push
+# my_list.append('spam')
+# # this is unshift
+# # list.insert(index, item)
+# my_list.insert(0, 'spam')
+# # remove the last spam
+# my_list.pop()
+# # remove finds a value and takes it ouw
+# if 'eggs' in my_list: 
+#   my_list.remove('eggs')
+# if 'eggs' in my_list: 
+#   my_list.remove('eggs')
+# # print(my_list.reverse())
 
-# ## # ## # ## # ## 
-# string and list slicing
+# # ## # ## # ## # ## 
+# # string and list slicing
 
-# this works on strings and lists
-my_nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-# list/str[start index:end index:steps]
+# # this works on strings and lists
+# my_nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# # list/str[start index:end index:steps]
 
-# make copy of of the list
-print(my_nums[::])
+# # make copy of of the list
+# print(my_nums[::])
 
-# remove first thing in the list
-print(my_nums[1::])
+# # remove first thing in the list
+# print(my_nums[1::])
 
-print(my_nums[1:3]) # omit colon for default step by 1
+# print(my_nums[1:3]) # omit colon for default step by 1
 
-# every other item in the list
-print(my_nums[::2]) # start @ default, end @ default, count by 2
+# # every other item in the list
+# print(my_nums[::2]) # start @ default, end @ default, count by 2
 
-# slice off the last
-print(my_nums[len(my_nums) - 1::])
+# # slice off the last
+# print(my_nums[len(my_nums) - 1::])
 
-# reverse with a step of -1
-print(my_nums[::-1])
+# # reverse with a step of -1
+# print(my_nums[::-1])
 
-# wrap the end -- all but the last
-print(my_nums[:-1:])
+# # wrap the end -- all but the last
+# print(my_nums[:-1:])
 
-my_str = '0123456789'
-print(my_str[:-1])
+# my_str = '0123456789'
+# print(my_str[:-1])
+
+# ## # ## # ## #
+# Dictionaries
+
+dict
+
+# dictionary literal
+# any data type can be a key
+
+my_dict = {
+  'fruit': 'banana',
+  10: 'woa',
+  True: 'wtff python',
+  'food': 'cake',
+  'number': 10
+}
+
+# print(my_dict)
+# # no dot notation because a dict is not an object 
+# print(my_dict['fruit'])
+# print(my_dict[True])
+
+# # adding to a dictionary
+# my_dict['new_key'] = 'new value'
+# print(my_dict)
+
+# print(dir(dict))
+
+# # remmoving keys
+# my_dict.pop('new_key') # option one
+# # check if key exists in dictionary
+# if 'new_key' in my_dict:
+#   del my_dict['new_key'] # option 2
+  
+# print(my_dict)
+
+# ## # ## # ## #
+# Looping
+
+numbers = [0, 1, 2, 3, 4, 8, 90, 100, 1001, 878, 564, 19874]
+
+# for loops
+# for value in list
+# for number in numbers:
+#   print(number)
+
+# more like the traditional for let i = 0 loop
+print(range(len(numbers))) # range is a datatype
+# for i in range(len(numbers)):
+#   print(i) # list index
+#   print(numbers[i]) # get the value
+
+# value and index with ennumeration
+# enumerate returns both the index and the element
+# for i, number in enumerate(numbers):
+#   print(f'the index {i} has a value of {number}')
+
+# # print(range(0, len(numbers), 2))
+
+# # while loop
+# i = 0
+# while i < len(numbers):
+#   print(numbers[i])
+#   # i++ cannot be done in python
+#   i += 1
+
+# # looping an object
+# for key in my_dict:
+#   print(f'the key {key} has a value of {my_dict[key]}')
+
+# # just get the values 
+# for value in my_dict.values():
+#   print(value)
+
+# ## # ## ## # #
+# user input from the command line 
+
+# input function -- blocking input (stops the program and waits for the user to do something)
+# input('the user will see this string, and the terminal will wait for the user to press a key')
+
+prompt = '>'
+print('hello, user. please enter your name')
+name = input(prompt)
+print(f'what a lovely name, {name}')
+
+print('please enter your age')
+age = input(prompt)
+print(f'wow! I could have sworn that you are {int(age) - 6} years old!')
